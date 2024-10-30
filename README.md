@@ -4,13 +4,16 @@ This project demonstrates inter-process communication (IPC) using **NAMED PIPES*
 It includes two components:
 Server: Listens for requests from the client via a named pipe, computes prime numbers within a given range, 
 and sends the result back.
+
 Client: Sends a request to the server (e.g., RANGE 10 50) and displays the server’s response.
 
 Project Structure
+
 server.cpp: Server code that listens for client requests and processes them.
 prog1.c: Client code that sends requests to the server and prints the server’s response.
 
 How It Works
+
 Server : Creates a named pipe (FIFO) at /tmp/server_pipe. Waits for client requests of the form RANGE XX YY.
 If the request is valid: Computes all prime numbers in the given range [XX, YY]. Sends the list of primes back to the client.
 If the request is malformed, it responds with: "Malformed request."
